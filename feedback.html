@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MagicBank | Feedback Institucional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #070C2A;
+      --dorado: #D6B15A;
+      --blanco: #FFFFFF;
+      --gris: #CFCFD6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--azul-profundo);
+      color: var(--blanco);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 42px;
+      width: 100%;
+      max-width: 540px;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      color: var(--dorado);
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    p {
+      color: var(--gris);
+      font-size: 14.5px;
+      line-height: 1.6;
+      margin-bottom: 26px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--gris);
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 14px;
+      margin-bottom: 18px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background-color: var(--dorado);
+      color: #1A1A1A;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 13.5px;
+      color: var(--dorado);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .volver:hover {
+      text-decoration: underline;
+    }
+
+    .nota {
+      margin-top: 18px;
+      font-size: 12.5px;
+      color: var(--gris);
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="panel">
+    <h1>Gracias por su visita</h1>
+
+    <p>
+      En MagicBank valoramos profundamente su experiencia.
+      Sus comentarios nos ayudan a fortalecer una plataforma
+      educativa profesional y en evolución permanente.
+    </p>
+
+    <form>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" placeholder="Nombre completo">
+
+      <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" placeholder="correo@ejemplo.com">
+
+      <label for="mensaje">Comentario o sugerencia</label>
+      <textarea id="mensaje" placeholder="Comparta su impresión sobre MagicBank"></textarea>
+
+      <button type="submit">Enviar feedback</button>
+    </form>
+
+    <a class="volver" href="https://magicbank.org">← Volver a MagicBank</a>
+
+    <div class="nota">
+      Agradecemos el tiempo dedicado a compartir su opinión.
+    </div>
+  </div>
+
+</body>
+</html>

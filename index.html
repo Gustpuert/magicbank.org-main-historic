@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MagicBank | AI-Guided Educational Ecosystem</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--azul-profundo:#070C2A;
+--blanco:#FFFFFF;
+--gris:#CFCFD6;
+--dorado:#D6B15A;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+font-family:'Inter',sans-serif;
+background-color:var(--azul-profundo);
+color:var(--blanco);
+line-height:1.6;
+}
+
+header{
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+padding:22px 28px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
+}
+
+.admin-mb{
+width:42px;
+height:42px;
+border-radius:50%;
+background:radial-gradient(circle at top left,#f2d27a,var(--dorado));
+color:#1a1a1a;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+text-decoration:none;
+}
+
+.logo{
+font-weight:600;
+letter-spacing:1px;
+font-size:16px;
+}
+
+#google_translate_element{
+font-size:13px;
+}
+
+.hero-visual{
+max-width:1200px;
+margin:40px auto 0;
+padding:0 20px;
+}
+
+.hero-visual img{
+width:100%;
+height:auto;
+border-radius:16px;
+box-shadow:0 0 40px rgba(214,177,90,0.35);
+display:block;
+}
+
+.hero{
+max-width:900px;
+margin:auto;
+padding:80px 24px 90px;
+}
+
+.hero h1{
+font-size:34px;
+font-weight:600;
+margin-bottom:16px;
+color:var(--dorado);
+}
+
+.hero p{
+font-size:16px;
+color:var(--blanco);
+max-width:760px;
+margin-bottom:18px;
+}
+
+/* ===== LINK CARDS ===== */
+
+.hero-links{
+display:flex;
+flex-direction:column;
+gap:26px;
+max-width:520px;
+margin-top:32px;
+}
+
+.link-item{
+background:rgba(255,255,255,0.02);
+border:1px solid rgba(255,255,255,0.08);
+padding:20px;
+border-radius:14px;
+}
+
+.link-item a{
+display:block;
+margin-bottom:10px;
+padding:15px 16px;
+border-radius:12px;
+text-decoration:none;
+font-size:15px;
+font-weight:500;
+text-align:center;
+}
+
+.btn-principal{
+background-color:var(--dorado);
+color:#1a1a1a;
+}
+
+.btn-secundario{
+border:1px solid var(--dorado);
+color:var(--dorado);
+}
+
+.link-title{
+color:var(--dorado);
+font-size:15px;
+font-weight:600;
+margin-bottom:6px;
+}
+
+.link-desc{
+color:#ffffff;
+font-size:14px;
+line-height:1.5;
+opacity:0.9;
+}
+
+/* ===== Evaluator ===== */
+
+.evaluador{
+max-width:900px;
+margin:auto;
+padding:80px 24px;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.evaluador h2{
+color:var(--dorado);
+font-size:28px;
+margin-bottom:18px;
+}
+
+.evaluador p{
+color:var(--gris);
+font-size:15.5px;
+margin-bottom:16px;
+}
+
+.evaluador a{
+display:inline-block;
+margin-top:18px;
+padding:14px 20px;
+background:var(--dorado);
+color:#1a1a1a;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* ===== Footer ===== */
+
+footer{
+text-align:center;
+padding:36px 24px;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+footer a{
+color:var(--dorado);
+text-decoration:none;
+}
+
+.footer-title{
+font-weight:600;
+letter-spacing:1px;
+margin-bottom:10px;
+}
+
+.footer-tagline{
+color:var(--dorado);
+margin-bottom:16px;
+}
+
+.footer-small{
+font-size:13px;
+opacity:0.8;
+margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="https://magicbank.org/acceso-administrativo.html" class="admin-mb notranslate">MB</a>
+<div class="logo notranslate">MAGICBANK</div>
+<div id="google_translate_element"></div>
+</nav>
+</header>
+
+<section class="hero-visual">
+<picture>
+<source srcset="assets/img/hero/aula-magicbank-oficial.webp" type="image/webp">
+<img
+src="assets/img/hero/aula-magicbank-oficial.png"
+alt="MagicBank - Education of the Future"
+loading="eager"
+decoding="async"
+width="1200"
+height="675">
+</picture>
+</section>
+
+<main>
+
+<section class="hero">
+
+<h1>The Education of the Future — Today</h1>
+
+<p>
+MagicBank is a global educational ecosystem where people learn with specialized artificial intelligence tutors.
+</p>
+
+<p>
+Instead of traditional courses, students interact directly with AI tutors that adapt to their knowledge level and guide learning step by step.
+</p>
+
+<p>
+The ecosystem includes professional education, specialized courses, a complete high school program and the creation of custom AI tutors for companies, institutions and professionals.
+</p>
+
+<div class="hero-links">
+
+<div class="link-item">
+<a class="btn-principal" href="https://magicbank.org/ia/index.html">
+Free course / Curso gratuito
+</a>
+<div class="link-title">Introduction to MagicBank</div>
+<div class="link-desc">
+Start with a free introduction and experience how MagicBank AI tutors guide learning step by step.
+</div>
+</div>
+
+<div class="link-item">
+<a class="btn-principal"
+href="https://chatgpt.com/g/g-697a851b8a148191a8971256abf33157-tutor-informativo-magibank"
+target="_blank">
+🤖 MagicBank Informational Tutor
+</a>
+<div class="link-title">Ask anything about MagicBank</div>
+<div class="link-desc">
+Ask any question about the MagicBank ecosystem and learn how adaptive AI tutors work.
+</div>
+</div>
+
+<div class="link-item">
+<a class="btn-principal"
+href="https://gustpuert.github.io/magicbank--demo/"
+target="_blank">
+🚀 Guided Tour of MagicBank
+</a>
+<div class="link-title">Explore the platform</div>
+<div class="link-desc">
+Enter the guided tour and interact with real MagicBank tutors to see how AI-guided learning works.
+</div>
+</div>
+
+<div class="link-item">
+<a class="btn-principal"
+href="https://magicbank.org/anexos/calidad-academica-magicbank.html">
+📘 Academic Quality Standards
+</a>
+<div class="link-title">Academic model</div>
+<div class="link-desc">
+Documentation explaining the MagicBank educational structure and academic methodology.
+</div>
+</div>
+
+<div class="link-item">
+<a class="btn-secundario"
+href="https://magicbank2.mitiendanube.com/productos/magicbank-university1/"
+target="_blank">
+🎓 MagicBank Complete High School
+</a>
+<div class="link-title">Global secondary education</div>
+<div class="link-desc">
+Complete high school from grade 1 to 11 guided by adaptive AI tutors and aligned with official curricula.
+</div>
+</div>
+
+<div class="link-item">
+<a class="btn-secundario"
+href="https://gustpuert.github.io/university.magicbank.org/">
+MagicBank University
+</a>
+<div class="link-title">Professional AI faculties</div>
+<div class="link-desc">
+Professional education guided by specialized AI tutors across multiple disciplines.
+</div>
+</div>
+
+<div class="link-item">
+<a class="btn-secundario"
+href="https://academy.magicbank.org">
+MagicBank Academy
+</a>
+<div class="link-title">Specialized courses</div>
+<div class="link-desc">
+Programs focused on practical knowledge, languages, technology and professional skills.
+</div>
+</div>
+
+  <div class="link-item">
+<a class="btn-secundario"
+href="https://magicbank2.mitiendanube.com/productos/facultad-de-musica-6k2ph/"
+target="_blank">
+🎼 MagicBank Musical Conservatory
+</a>
+<div class="link-title">Professional music education</div>
+<div class="link-desc">
+Study music through adaptive AI tutors, develop rhythm, melody and harmony, and specialize in a musical instrument guided by the MagicBank Musical Director.
+</div>
+  </div>
+
+<div class="link-item">
+<a class="btn-secundario"
+href="https://gustpuert.github.io/magicbank.org/fabrica-de-tutores-pago.html">
+Tutor Factory
+</a>
+<div class="link-title">Create custom AI tutors</div>
+<div class="link-desc">
+Build specialized tutors for professionals, companies, institutions or specific learning needs.
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="evaluador">
+
+<h2>Pro Tutor Evaluator</h2>
+
+<p>
+The Pro Tutor Evaluator analyzes your real knowledge level through an intelligent conversation.
+</p>
+
+<p>
+It detects learning gaps and guides you precisely.
+</p>
+
+<a href="https://chatgpt.com/g/g-6946c65239d481918eefe1b9735441ca-evaluador-tutor-pro" target="_blank">
+Start Evaluation with Pro Tutor
+</a>
+
+</section>
+
+</main>
+
+<footer class="notranslate">
+
+<div class="footer-title">
+MAGICBANK EDUCATIONAL ECOSYSTEM
+</div>
+
+<div class="footer-tagline">
+The Education of the Future — Today
+</div>
+
+<p>
+<a href="https://magicbank.org/educational-model.html">
+MagicBank Educational Model
+</a>
+</p>
+
+<div class="footer-small">
+© MagicBank Educational Ecosystem. All rights reserved.
+</div>
+
+<div class="footer-small">
+Protected by copyright. Copying or reproduction, in whole or in part, is prohibited.
+</div>
+
+</footer>
+
+<script>
+function googleTranslateElementInit(){
+new google.translate.TranslateElement({
+pageLanguage:'en',
+includedLanguages:'es,pt,fr,de,it',
+layout:google.translate.TranslateElement.InlineLayout.SIMPLE
+},'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

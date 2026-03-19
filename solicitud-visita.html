@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MagicBank | Solicitud de Acceso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #070C2A;
+      --blanco: #FFFFFF;
+      --gris: #CFCFD6;
+      --dorado: #D6B15A;
+      --rojo: #C0392B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--azul-profundo);
+      color: var(--blanco);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.05);
+      border-radius: 18px;
+      padding: 40px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+    }
+
+    h1 {
+      color: var(--dorado);
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--gris);
+      font-size: 14.5px;
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+
+    label {
+      font-size: 13.5px;
+      color: var(--gris);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 14.5px;
+      margin-bottom: 18px;
+    }
+
+    .checkbox {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      color: var(--gris);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background-color: var(--dorado);
+      color: #1A1A1A;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: var(--rojo);
+      font-size: 13px;
+      margin-bottom: 14px;
+      display: none;
+    }
+
+    .nota {
+      margin-top: 18px;
+      font-size: 12.5px;
+      color: var(--gris);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="panel">
+    <h1>Solicitud de acceso</h1>
+
+    <p>
+      Acceso temporal para conocer el ecosistema MagicBank,
+      sus programas educativos y tutores especializados.
+    </p>
+
+    <form id="visitaForm">
+      <label>Nombre completo</label>
+      <input type="text" id="nombre" required>
+
+      <label>Correo electrónico</label>
+      <input type="email" id="correo" required>
+
+      <div class="checkbox">
+        <input type="checkbox" id="acepto" required>
+        <span>Acepto que este acceso es demostrativo y temporal.</span>
+      </div>
+
+      <div id="error" class="error">Completa todos los campos.</div>
+
+      <button type="submit">Solicitar acceso</button>
+    </form>
+
+    <div class="nota">
+      Recibirás las instrucciones de acceso en tu correo.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("visitaForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = nombre.value.trim();
+      const correo = correo.value.trim();
+      const acepto = document.getElementById("acepto").checked;
+
+      if (!nombre || !correo || !acepto) {
+        error.style.display = "block";
+        return;
+      }
+
+      error.style.display = "none";
+
+      fetch("https://TU_BACKEND_URL/solicitud-visita", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, correo })
+      });
+
+      alert("Solicitud enviada. Revisa tu correo.");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

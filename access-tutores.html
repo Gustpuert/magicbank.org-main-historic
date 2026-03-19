@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MagicBank | Visita guiada a Tutores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #070C2A;
+      --blanco: #FFFFFF;
+      --gris: #CFCFD6;
+      --dorado: #D6B15A;
+      --rojo: #C0392B;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--azul-profundo);
+      color: var(--blanco);
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 16px;
+    }
+
+    .timer-box {
+      background: rgba(255,255,255,0.06);
+      padding: 10px 16px;
+      border-radius: 10px;
+      color: var(--dorado);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 24px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--dorado);
+    }
+
+    p {
+      color: var(--gris);
+      font-size: 15px;
+      margin-bottom: 28px;
+      max-width: 800px;
+    }
+
+    .avisos {
+      margin-bottom: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--rojo);
+      display: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      color: var(--dorado);
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background-color: var(--dorado);
+      color: #1a1a1a;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 13px;
+      color: var(--gris);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">MAGICBANK · VISITA GUIADA</div>
+    <div id="timer" class="timer-box">Tiempo restante: 15:00</div>
+  </nav>
+</header>
+
+<main>
+  <h1>Acceso temporal a tutores MagicBank</h1>
+  <p>
+    Estás realizando una visita guiada con tiempo limitado.
+    Puedes explorar los tutores disponibles. El tiempo restante
+    se muestra de forma permanente por respeto a tu experiencia.
+  </p>
+
+  <div id="aviso" class="avisos"></div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Tutores Academy</h3>
+      <a href="https://gustpuert.github.io/tutores.academy.magicbank.org/" target="_blank">Explorar</a>
+    </div>
+
+    <div class="card">
+      <h3>Tutores University</h3>
+      <a href="https://gustpuert.github.io/tutores.university.magicbank.org/" target="_blank">Explorar</a>
+    </div>
+
+    <div class="card">
+      <h3>Fábrica de Tutores</h3>
+      <a href="https://magicbank.org/fabrica-de-tutores.html" target="_blank">Explorar</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  MagicBank © Plataforma viva en evolución permanente
+</footer>
+
+<!-- SONIDOS -->
+<audio id="sonidoAviso">
+  <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+</audio>
+
+<script>
+  const DURACION = 15 * 60 * 1000;
+  const FIN_REDIRECT = "https://magicbank.org/feedback.html";
+
+  let inicio = localStorage.getItem("mb_tour_start");
+
+  if (!inicio) {
+    inicio = Date.now();
+    localStorage.setItem("mb_tour_start", inicio);
+  } else {
+    inicio = parseInt(inicio, 10);
+  }
+
+  const timer = document.getElementById("timer");
+  const aviso = document.getElementById("aviso");
+  const sonido = document.getElementById("sonidoAviso");
+
+  let aviso2 = false;
+  let aviso1 = false;
+
+  const intervalo = setInterval(() => {
+    const restante = DURACION - (Date.now() - inicio);
+
+    if (restante <= 0) {
+      clearInterval(intervalo);
+      localStorage.removeItem("mb_tour_start");
+      window.location.href = FIN_REDIRECT;
+      return;
+    }
+
+    const m = Math.floor(restante / 60000);
+    const s = Math.floor((restante % 60000) / 1000);
+    timer.textContent = `Tiempo restante: ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+
+    if (m === 2 && !aviso2) {
+      aviso.textContent = "⚠️ Aviso: quedan 2 minutos para finalizar la visita.";
+      aviso.style.display = "block";
+      sonido.play();
+      aviso2 = true;
+    }
+
+    if (m === 1 && !aviso1) {
+      aviso.textContent = "⏳ Aviso final: queda 1 minuto para concluir la visita.";
+      aviso.style.display = "block";
+      sonido.play();
+      aviso1 = true;
+    }
+
+  }, 1000);
+</script>
+
+</body>
+</html>

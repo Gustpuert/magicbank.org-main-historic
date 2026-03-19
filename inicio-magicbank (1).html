@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MagicBank | La educación del futuro, hoy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-profundo: #070C2A;
+      --dorado: #D6B15A;
+      --blanco: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--azul-profundo);
+      color: var(--blanco);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .contenedor {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      gap: 40px;
+      opacity: 0;
+      animation: fadeInTotal 3s ease forwards;
+    }
+
+    /* LOGO HOLOGRÁFICO */
+    .logo {
+      width: 320px;
+      max-width: 85%;
+      animation: logoEntrada 2s ease forwards, glow 5s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    /* IMAGEN HERO */
+    .imagen-aula {
+      width: 100%;
+      max-width: 980px;
+      border-radius: 14px;
+      opacity: 0;
+      animation: imagenEntrada 2s ease forwards;
+      animation-delay: 2s;
+    }
+
+    /* TEXTO */
+    .frase-principal {
+      font-size: 1.4rem;
+      color: var(--dorado);
+      margin-top: 10px;
+    }
+
+    .frase-secundaria {
+      margin-top: 25px;
+      font-size: 1.05rem;
+      opacity: 0.9;
+      max-width: 720px;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ANIMACIONES */
+    @keyframes fadeInTotal {
+      to { opacity: 1; }
+    }
+
+    @keyframes logoEntrada {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes imagenEntrada {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(214,177,90,0.6)); }
+      50% { filter: drop-shadow(0 0 28px rgba(214,177,90,1)); }
+    }
+
+    @media (max-width: 768px) {
+      .logo { width: 240px; }
+      .frase-principal { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <!-- LOGO -->
+    <img 
+      class="logo"
+      src="/assets/img/logos/logo-magicbank.png"
+      alt="MagicBank - La educación del futuro, hoy"
+    >
+
+    <!-- FRASE -->
+    <div class="frase-principal">
+      La educación del futuro, hoy.
+    </div>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <img 
+      class="imagen-aula"
+      src="/assets/img/hero/aula-magicbank.png"
+      alt="Aula MagicBank - Ecosistema educativo inteligente"
+    >
+
+    <!-- MENSAJE -->
+    <div class="frase-secundaria">
+      “MagicBank no enseña a usar la tecnología, enseña a convivir con ella.”
+    </div>
+
+  </div>
+
+  <footer>
+    MagicBank © Ecosistema educativo guiado por Inteligencia Artificial
+  </footer>
+
+</body>
+</html>
