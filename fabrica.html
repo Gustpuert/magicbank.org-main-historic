@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fábrica de Tutores | Acceso</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body{font-family:Inter;background:#070C2A;color:#fff;display:flex;justify-content:center;padding:40px}
+.panel{max-width:520px;width:100%;background:rgba(255,255,255,.05);padding:40px;border-radius:18px}
+h1{color:#D6B15A;text-align:center}
+input,button{width:100%;padding:14px;border-radius:10px;border:none;margin:10px 0}
+button{background:#D6B15A;font-weight:700}
+a{display:block;padding:10px;margin:6px 0;background:rgba(255,255,255,.08);border-radius:8px;color:#fff;text-decoration:none}
+.timer{color:#D6B15A;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="panel">
+<h1>Fábrica de Tutores</h1>
+<input id="clave" placeholder="Clave de acceso">
+<button onclick="login()">Ingresar</button>
+<div id="timer" class="timer"></div>
+
+<div id="links" style="display:none">
+<a href="https://chatgpt.com/g/g-69593c44a6c08191accf43d956372325" target="_blank">TAP Salud</a>
+<a href="https://chatgpt.com/g/g-695946138ec88191a7d55a83d238a968" target="_blank">TAP Abogados</a>
+<a href="https://chatgpt.com/g/g-695949c461208191b087fe103d72c0ce" target="_blank">TAP Ingeniería</a>
+<a href="https://chatgpt.com/g/g-6959471996e4819193965239320a5daa" target="_blank">TAP Educación</a>
+<a href="https://chatgpt.com/g/g-695947d7fe30819181bc53041e0c96d2" target="_blank">TAP Empresas</a>
+</div>
+</div>
+
+<script>
+const DURACION=15*60*1000;
+function login(){localStorage.setItem("fab_end",Date.now()+DURACION);start();}
+function start(){
+ document.getElementById("links").style.display="block";
+ setInterval(()=>{
+  const r=localStorage.getItem("fab_end")-Date.now();
+  if(r<=0){localStorage.clear();location.href="https://magicbank.org";}
+  document.getElementById("timer").innerText="Tiempo restante "+Math.floor(r/60000)+":"+String(Math.floor(r%60000/1000)).padStart(2,"0");
+ },1000);
+}
+if(localStorage.getItem("fab_end")>Date.now())start();
+</script>
+</body>
+</html>
